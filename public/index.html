@@ -73,13 +73,14 @@
   /* The signature: each word starts as a pencil outline and fills solid. */
   .w {
     display: inline-block;
-    color: transparent;
+    color: var(--paper);
+    paint-order: stroke fill;
     -webkit-text-stroke: var(--stroke) var(--word-color, var(--ink));
     transition: color 420ms cubic-bezier(.2,.8,.2,1), -webkit-text-stroke-color 420ms;
     cursor: default;
   }
   .w.solid { color: var(--word-color, var(--ink)); }
-  .w.solid:hover { color: transparent; }
+  .w.solid:hover { color: var(--paper); }
   .w[data-tone="blue"] { --word-color: var(--blue); }
 
   .lede {
