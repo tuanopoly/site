@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tuanopoly — AI-native developer</title>
+<meta name="description" content="Anh Tuan Nguyen. AI-native developer in Ho Chi Minh City. I design it, AI builds it, I ship it live. Open for freelance builds.">
+<meta property="og:title" content="Tuanopoly — AI-native developer">
+<meta property="og:description" content="I design it, AI builds it, I ship it live. Open for freelance builds.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tuanopoly.com/">
+<meta name="theme-color" content="#12468F">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%2312468F'/%3E%3Ctext x='32' y='45' text-anchor='middle' font-family='Arial Black,Arial,sans-serif' font-weight='900' font-size='38' fill='%23EEF2F8'%3ET%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,300..800&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #EEF2F8;
+    --ink: #0A1A33;
+    --blue: #12468F;
+    --blue-deep: #0B2F63;
+    --tint: #D6E1F3;
+    --mute: #5B6B84;
+    --display: "Bricolage Grotesque", "Arial Black", Impact, sans-serif;
+    --body: "Instrument Sans", "Helvetica Neue", Arial, sans-serif;
+    --mono: "JetBrains Mono", "SFMono-Regular", Consolas, monospace;
+    --gutter: clamp(1.25rem, 4vw, 4rem);
+    --stroke: 0.045em;
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--body);
+    font-size: 1.0625rem;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; }
+  ::selection { background: var(--blue); color: var(--paper); }
+  :focus-visible { outline: 3px solid var(--blue); outline-offset: 4px; border-radius: 2px; }
+
+  .wrap { padding-inline: var(--gutter); max-width: 88rem; margin-inline: auto; }
+
+  /* ---------- top bar ---------- */
+  .top {
+    display: flex; justify-content: space-between; align-items: baseline;
+    padding-block: 1.5rem;
+    font-family: var(--mono); font-size: 0.8125rem; letter-spacing: 0.04em;
+  }
+  .top .brand { font-weight: 500; text-decoration: none; text-transform: uppercase; }
+  .top .mail { text-decoration: none; color: var(--blue); }
+  .top .mail:hover { text-decoration: underline; text-underline-offset: 0.25em; text-decoration-thickness: 2px; }
+
+  /* ---------- hero ---------- */
+  .hero { padding-block: clamp(3rem, 10vh, 7rem) clamp(3rem, 8vh, 6rem); }
+  h1 {
+    margin: 0;
+    font-family: var(--display);
+    font-weight: 800;
+    font-variation-settings: "wdth" 90, "opsz" 96;
+    font-size: clamp(3.75rem, 13.5vw, 13rem);
+    line-height: 0.88;
+    letter-spacing: -0.035em;
+    text-wrap: balance;
+  }
+  h1 .line { display: block; }
+
+  /* The signature: each word starts as a pencil outline and fills solid. */
+  .w {
+    display: inline-block;
+    color: transparent;
+    -webkit-text-stroke: var(--stroke) var(--word-color, var(--ink));
+    transition: color 420ms cubic-bezier(.2,.8,.2,1), -webkit-text-stroke-color 420ms;
+    cursor: default;
+  }
+  .w.solid { color: var(--word-color, var(--ink)); }
+  .w.solid:hover { color: transparent; }
+  .w[data-tone="blue"] { --word-color: var(--blue); }
+
+  .lede {
+    display: grid; grid-template-columns: minmax(0, 34ch) auto; gap: 2rem 4rem;
+    align-items: end; justify-content: space-between;
+    margin-top: clamp(2rem, 5vw, 3.5rem);
+  }
+  .lede p { margin: 0; font-size: clamp(1.125rem, 1.6vw, 1.375rem); line-height: 1.4; text-wrap: pretty; }
+
+  .btn {
+    position: relative; isolation: isolate; overflow: hidden;
+    display: inline-flex; align-items: center; gap: 0.75rem;
+    padding: 1rem 1.5rem 1rem 1.75rem;
+    background: var(--blue); color: var(--paper);
+    font-family: var(--display); font-weight: 700; font-size: 1.25rem; letter-spacing: -0.01em;
+    text-decoration: none; border-radius: 999px;
+    transition: transform 200ms cubic-bezier(.2,.8,.2,1);
+  }
+  .btn::before {
+    content: ""; position: absolute; inset: 0; z-index: -1;
+    background: var(--blue-deep);
+    transform: translateX(-101%);
+    transition: transform 320ms cubic-bezier(.2,.8,.2,1);
+  }
+  .btn:hover::before { transform: translateX(0); }
+  .btn:hover { transform: translateY(-2px); }
+  .btn:active { transform: translateY(0); }
+  .btn svg { width: 1.1em; height: 1.1em; transition: transform 320ms cubic-bezier(.2,.8,.2,1); }
+  .btn:hover svg { transform: translateX(0.3em); }
+
+  .socials {
+    display: flex; flex-wrap: wrap; gap: 0.5rem 2rem;
+    margin: 2.5rem 0 0; padding: 0; list-style: none;
+    font-family: var(--mono); font-size: 0.875rem;
+  }
+  .socials a {
+    display: inline-flex; gap: 0.6em; align-items: baseline;
+    text-decoration: none; color: var(--mute);
+    background-image: linear-gradient(var(--blue), var(--blue));
+    background-repeat: no-repeat; background-size: 0 2px; background-position: 0 100%;
+    transition: background-size 260ms cubic-bezier(.2,.8,.2,1), color 200ms;
+    padding-bottom: 2px;
+  }
+  .socials a:hover { color: var(--ink); background-size: 100% 2px; }
+  .socials a b { font-weight: 500; color: var(--ink); }
+
+  /* ---------- sections ---------- */
+  .rows { border-top: 2px solid var(--ink); }
+  .row {
+    display: grid; grid-template-columns: minmax(10rem, 1fr) minmax(0, 3fr);
+    gap: 1rem 3rem;
+    padding-block: clamp(2rem, 5vw, 3.5rem);
+    border-bottom: 1px solid var(--tint);
+  }
+  .row h2 {
+    margin: 0; font-family: var(--mono); font-weight: 500;
+    font-size: 0.8125rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--mute);
+    padding-top: 0.5em;
+  }
+  .row .body { font-size: clamp(1.25rem, 2.2vw, 1.75rem); line-height: 1.35; max-width: 30ch; text-wrap: pretty; }
+  .row .body p { margin: 0; }
+  .row .body p + p { margin-top: 0.75em; }
+  .row .body ul { margin: 0; padding: 0; list-style: none; }
+  .row .body li + li { margin-top: 0.75em; }
+  .row .body li::before { content: "—"; color: var(--blue); margin-right: 0.5em; }
+  .row .body a { color: var(--blue); text-decoration-thickness: 2px; text-underline-offset: 0.15em; }
+  .row .body a:hover { color: var(--blue-deep); }
+  .row .name { font-family: var(--display); font-weight: 700; font-variation-settings: "wdth" 90; letter-spacing: -0.01em; }
+
+  /* ---------- footer ---------- */
+  footer {
+    display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem 2rem;
+    padding-block: 2.5rem 3rem;
+    font-family: var(--mono); font-size: 0.8125rem; color: var(--mute);
+  }
+  footer a { text-decoration: none; color: var(--ink); }
+  footer a:hover { color: var(--blue); }
+  footer ul { display: flex; gap: 1.5rem; margin: 0; padding: 0; list-style: none; }
+
+  @media (max-width: 40rem) {
+    .lede { grid-template-columns: 1fr; }
+    .row { grid-template-columns: 1fr; gap: 0.75rem; }
+    .row h2 { padding-top: 0; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .w { color: var(--word-color, var(--ink)); transition: none; }
+    .w.solid:hover { color: var(--word-color, var(--ink)); }
+    .btn, .btn::before, .btn svg, .socials a { transition: none; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="top">
+    <a class="brand" href="/">Tuanopoly</a>
+    <a class="mail" href="mailto:tuan@tuanopoly.com">tuan@tuanopoly.com</a>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1 aria-label="AI-native developer.">
+        <span class="line"><span class="w" data-tone="blue" aria-hidden="true">AI-native</span></span>
+        <span class="line"><span class="w" aria-hidden="true">developer.</span></span>
+      </h1>
+      <div class="lede">
+        <p>I build small software fast and put it online where you can use it. Based in Ho Chi Minh City, open for freelance builds.</p>
+        <a class="btn" href="mailto:tuan@tuanopoly.com">
+          Email me
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </div>
+      <ul class="socials">
+        <li><a href="https://x.com/tuanopoly" rel="me">X <b>@tuanopoly</b></a></li>
+        <li><a href="https://github.com/tuanopoly" rel="me">GitHub <b>@tuanopoly</b></a></li>
+        <li><a href="https://youtube.com/@tuanopoly" rel="me">YouTube <b>@tuanopoly</b></a></li>
+        <li><a href="https://instagram.com/tuanopoly" rel="me">Instagram <b>@tuanopoly</b></a></li>
+      </ul>
+    </section>
+
+    <div class="rows">
+      <section class="row">
+        <h2>What I’m building</h2>
+        <div class="body">
+          <p>First project is in progress. Follow along on <a href="https://x.com/tuanopoly">X</a>, or check back soon.</p>
+        </div>
+      </section>
+
+      <section class="row">
+        <h2>How I work</h2>
+        <div class="body">
+          <ul>
+            <li>I start with the design: how it should look, feel, and flow.</li>
+            <li>AI turns that design into working software, fast.</li>
+            <li>I review, refine, and ship it live on a real domain.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="row">
+        <h2>About</h2>
+        <div class="body">
+          <p><span class="name">Anh Tuan Nguyen.</span> Digital media major and photographer turned developer. I care about how things look as much as whether they work.</p>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <a href="mailto:tuan@tuanopoly.com">tuan@tuanopoly.com</a>
+    <ul>
+      <li><a href="https://x.com/tuanopoly">X</a></li>
+      <li><a href="https://github.com/tuanopoly">GitHub</a></li>
+      <li><a href="https://youtube.com/@tuanopoly">YouTube</a></li>
+      <li><a href="https://instagram.com/tuanopoly">Instagram</a></li>
+    </ul>
+    <span>Ho Chi Minh City · 2026</span>
+  </footer>
+
+</div>
+
+<script>
+  // Sketch-to-solid: the headline draws as an outline, then fills in word by word.
+  (function () {
+    var words = document.querySelectorAll('.w');
+    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduce) { words.forEach(function (w) { w.classList.add('solid'); }); return; }
+    words.forEach(function (w, i) {
+      setTimeout(function () { w.classList.add('solid'); }, 500 + i * 380);
+    });
+  })();
+</script>
+<!-- Cloudflare Web Analytics --><script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "c8972872a7e942d4b6b1d0df9134fa3a"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>
