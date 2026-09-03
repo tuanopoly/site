@@ -19,6 +19,7 @@ npm run deploy
 ## Layout
 
 - `public/index.html` — the whole page
+- `public/_headers` — response headers served with the static assets (HSTS, nosniff, framing, referrer, permissions)
 - `wrangler.jsonc` — Worker name, assets directory, custom domain routes
 - `CONTEXT.md` — glossary of the terms used when talking about this site
 
