@@ -15,10 +15,7 @@
 // Perlin noise: Stefan Gustavson, https://github.com/stegu/webgl-noise (MIT).
 import * as THREE from '/vendor/three.module.min.js';
 
-const canvas = document.getElementById('orb');
-if (canvas) init(canvas);
-
-const NOISE = /* glsl */ `
+const NOISE =/* glsl */ `
   // Classic Perlin 3D noise, Stefan Gustavson (MIT).
   vec4 permute(vec4 x){return mod(((x*34.0)+1.0)*x, 289.0);}
   vec4 taylorInvSqrt(vec4 r){return 1.79284291400159 - 0.85373472095314 * r;}
@@ -143,7 +140,8 @@ function init(canvas) {
         diffuseColor.rgb *= vPattern;`);
   };
 
-  const detail = window.matchMedia('(max-width: 1199px)').matches ? 128 : 200;
+  // 80 subdivisions is ~390k vertices and builds in ~150ms; 200 was 2.4M and ~850ms.
+  const detail = window.matchMedia('(max-width: 640px)').matches ? 56 : 80;
   const mesh = new THREE.Mesh(new THREE.IcosahedronGeometry(1.3, detail), material);
   mesh.frustumCulled = false;
   scene.add(mesh);
@@ -182,6 +180,11 @@ function init(canvas) {
 
   readColors();
   resize();
+  renderer.compile(scene, camera);
+  frame();
   canvas.classList.add('is-ready');
-  kick();
+  performance.mark('orb-ready');
 }
+
+const canvas = document.getElementById('orb');
+if (canvas) init(canvas);
