@@ -35,10 +35,9 @@
             <defs>
               <radialGradient id="moon-fill" cx="35%" cy="30%" r="75%"><stop offset="0" stop-color="#fff0b3"/><stop offset="1" stop-color="#d6ac2e"/></radialGradient>
               <filter id="moon-glow" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="2.4"/></filter>
-              <mask id="moon-mask"><rect width="24" height="24" fill="#fff"/><circle cx="15.6" cy="9.4" r="7.6" fill="#000"/></mask>
             </defs>
-            <circle cx="12" cy="12" r="9.2" fill="#e6bf4a" opacity="1" filter="url(#moon-glow)" mask="url(#moon-mask)"/>
-            <circle cx="12" cy="12" r="7.2" fill="url(#moon-fill)" mask="url(#moon-mask)"/>
+            <path d="M10.38 4.98A7.2 7.2 0 1 0 18.59 14.91A7 7 0 0 1 10.38 4.98Z" fill="#e6bf4a" stroke="#e6bf4a" stroke-width="1.6" stroke-linejoin="round" filter="url(#moon-glow)"/>
+            <path d="M10.38 4.98A7.2 7.2 0 1 0 18.59 14.91A7 7 0 0 1 10.38 4.98Z" fill="url(#moon-fill)"/>
           </svg>
           <svg class="icon-sun" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
             <defs>
