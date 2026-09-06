@@ -31,8 +31,26 @@
       <nav>
         <a href="#building">Building</a>
         <button id="mode-toggle" class="mode-toggle" type="button" aria-pressed="false" aria-label="Switch to dark mode">
-          <svg class="icon-moon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a7 7 0 1 0 10.5 10.5Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
-          <svg class="icon-sun" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 2.5v3M12 18.5v3M2.5 12h3M18.5 12h3M5.3 5.3l2.1 2.1M16.6 16.6l2.1 2.1M5.3 18.7l2.1-2.1M16.6 7.4l2.1-2.1" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
+            <defs>
+              <radialGradient id="moon-fill" cx="35%" cy="30%" r="75%"><stop offset="0" stop-color="#fff0b3"/><stop offset="1" stop-color="#d6ac2e"/></radialGradient>
+              <filter id="moon-glow" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="1.8"/></filter>
+              <mask id="moon-mask"><rect width="24" height="24" fill="#fff"/><circle cx="15.6" cy="9.4" r="7.6" fill="#000"/></mask>
+            </defs>
+            <circle cx="12" cy="12" r="8.6" fill="#e6bf4a" opacity="0.85" filter="url(#moon-glow)" mask="url(#moon-mask)"/>
+            <circle cx="12" cy="12" r="7.2" fill="url(#moon-fill)" mask="url(#moon-mask)"/>
+          </svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
+            <defs>
+              <radialGradient id="sun-fill" cx="40%" cy="35%" r="70%"><stop offset="0" stop-color="#fff3b0"/><stop offset="0.6" stop-color="#ffc857"/><stop offset="1" stop-color="#ff9f3f"/></radialGradient>
+              <filter id="sun-glow" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="2"/></filter>
+            </defs>
+            <circle cx="12" cy="12" r="7.5" fill="#ffb347" opacity="0.55" filter="url(#sun-glow)"/>
+            <g stroke="#ffb347" stroke-width="1.8" stroke-linecap="round">
+              <path d="M12 2.2v2.6M12 19.2v2.6M2.2 12h2.6M19.2 12h2.6M5.1 5.1l1.8 1.8M17.1 17.1l1.8 1.8M5.1 18.9l1.8-1.8M17.1 6.9l1.8-1.8"/>
+            </g>
+            <circle cx="12" cy="12" r="4.6" fill="url(#sun-fill)"/>
+          </svg>
         </button>
         <a class="btn btn-accent" href="mailto:tuan@tuanopoly.com">Email me</a>
       </nav>
