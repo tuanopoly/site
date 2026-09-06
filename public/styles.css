@@ -105,6 +105,15 @@ p { margin: 0; }
 .nav nav > a:not(.btn) { text-decoration: none; color: var(--ap-text-muted); font-weight: 500; }
 .nav nav > a:not(.btn):hover { color: var(--ap-text); }
 @media (max-width: 640px) { .nav nav > a:not(.btn) { display: none; } }
+.mode-toggle {
+  display: inline-grid; place-items: center; width: 44px; height: 44px; padding: 0;
+  border: 0; border-radius: 50%; background: transparent; color: var(--ap-text-muted); cursor: pointer;
+  transition: color var(--t), background-color var(--t);
+}
+.mode-toggle:hover { color: var(--ap-text); background: var(--ap-surface); }
+.mode-toggle .icon-sun { display: none; }
+:root[data-theme="dark"] .mode-toggle .icon-sun { display: block; }
+:root[data-theme="dark"] .mode-toggle .icon-moon { display: none; }
 
 /* ---------- hero ---------- */
 /* The orb opens the page: centred, large, the headline stacked beneath it. */

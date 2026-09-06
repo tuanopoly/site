@@ -8,7 +8,7 @@
 
   function apply() {
     root.dataset.theme = mode;
-    toggle.textContent = mode === 'light' ? 'Dark' : 'Light';
+    toggle.setAttribute('aria-label', mode === 'light' ? 'Switch to dark mode' : 'Switch to light mode');
     toggle.setAttribute('aria-pressed', String(mode === 'dark'));
     if (meta) meta.content = getComputedStyle(root).getPropertyValue('--ap-background').trim();
   }
