@@ -107,9 +107,19 @@ p { margin: 0; }
 @media (max-width: 640px) { .nav nav > a:not(.btn) { display: none; } }
 
 /* ---------- hero ---------- */
+/* The orb opens the page: centred, large, the headline stacked beneath it. */
 .hero {
-  max-width: var(--max); margin: 0 auto; padding: 56px 24px 24px;
-  display: grid; gap: 22px; justify-items: start;
+  max-width: var(--max); margin: 0 auto; padding: 8px 24px 24px;
+  display: grid; gap: 8px; justify-items: center; text-align: center;
+}
+.hero-copy { display: grid; gap: 22px; justify-items: center; }
+.hero-copy .cta-row, .hero-copy .socials { justify-content: center; }
+.hero-orb { width: min(72vw, 520px); aspect-ratio: 1; pointer-events: none; margin-bottom: -6%; }
+.hero-orb canvas { display: block; width: 100%; height: 100%; opacity: 0; transition: opacity 900ms ease; }
+.hero-orb canvas.is-ready { opacity: 1; }
+@media (max-width: 640px) {
+  .hero { padding-top: 0; }
+  .hero-orb { width: min(80vw, 300px); }
 }
 .eyebrow { font: 600 0.8rem var(--mono); letter-spacing: 0.08em; text-transform: uppercase; color: var(--ap-secondary); }
 .hero h1 {

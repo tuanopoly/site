@@ -36,6 +36,8 @@
 
     <main>
       <section class="hero">
+        <div class="hero-orb" aria-hidden="true"><canvas id="orb"></canvas></div>
+        <div class="hero-copy">
         <p class="eyebrow">AI-native developer · Ho Chi Minh City</p>
         <h1>I design it.<br />AI builds it.<br />I ship it live.</h1>
         <p class="lede">
@@ -52,6 +54,7 @@
           <li><a href="https://youtube.com/@tuanopoly" rel="me">YouTube <b>@tuanopoly</b></a></li>
           <li><a href="https://instagram.com/tuanopoly" rel="me">Instagram <b>@tuanopoly</b></a></li>
         </ul>
+        </div>
       </section>
 
       <section class="building" id="building">
@@ -76,7 +79,7 @@
               <li><b>What I decided by hand.</b> The accent is never altered, the pricing, and a default accent chosen on contrast and color-blindness math.</li>
             </ul>
             <div class="project-links">
-              <a class="btn btn-accent" href="https://accentpal.tuanopoly.com">Try it live</a>
+              <a class="btn btn-accent" href="https://accentpal.tuanopoly.com" target="_blank" rel="noopener">Try it live</a>
               <span class="hint">This page runs on AccentPal's palette for the Tuanopoly blue.</span>
             </div>
           </article>
@@ -130,6 +133,7 @@
     </footer>
 
     <script src="/main.js"></script>
+    <script type="module" src="/orb.js"></script>
     <!-- Cloudflare Web Analytics --><script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "c8972872a7e942d4b6b1d0df9134fa3a"}'></script><!-- End Cloudflare Web Analytics -->
   </body>
 </html>

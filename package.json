@@ -8,6 +8,7 @@
     "deploy": "wrangler deploy"
   },
   "devDependencies": {
+    "three": "^0.185.1",
     "wrangler": "^4.128.0"
   }
 }
