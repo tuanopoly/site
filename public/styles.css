@@ -130,7 +130,13 @@ p { margin: 0; }
   .hero { padding-top: 0; }
   .hero-orb { width: min(80vw, 300px); }
 }
-.eyebrow { font: 600 0.8rem var(--mono); letter-spacing: 0.08em; text-transform: uppercase; color: var(--ap-secondary); }
+.eyebrow {
+  font: 600 0.85rem var(--mono); letter-spacing: 0.08em; text-transform: uppercase; color: var(--ap-secondary);
+  padding: 7px 14px; border-radius: 999px;
+  background: color-mix(in srgb, var(--ap-secondary) 10%, transparent);
+  border: 1px solid color-mix(in srgb, var(--ap-secondary) 35%, transparent);
+  transition: background-color var(--t), border-color var(--t), color var(--t);
+}
 .hero h1 {
   font-size: clamp(2.4rem, 6vw, 4.6rem); line-height: 1.02; font-weight: 600;
   letter-spacing: -0.035em; max-width: 16ch;
