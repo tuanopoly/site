@@ -198,12 +198,12 @@ section.building, section.how, section.contact { max-width: var(--max); margin: 
 
 /* ---------- about (accent block) ---------- */
 .about {
-  max-width: var(--max); margin: 88px auto 0; padding: 40px 28px; border-radius: var(--radius);
+  max-width: calc(var(--max) - 48px); margin: 88px auto 0; padding: 40px 28px; border-radius: var(--radius);
   background: var(--ap-accent); color: var(--ap-on-accent); display: grid; gap: 12px;
   transition: background-color var(--t), color var(--t);
 }
 .about p { max-width: 70ch; font-size: 1.05rem; opacity: 0.92; }
-@media (max-width: 1128px) { .about { margin-left: 24px; margin-right: 24px; } }
+@media (max-width: 1080px) { .about { margin-left: 24px; margin-right: 24px; } }
 
 /* ---------- contact ---------- */
 .contact { display: grid; gap: 12px; padding-bottom: 40px; }
