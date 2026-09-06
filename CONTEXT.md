@@ -1,6 +1,6 @@
 # tuanopoly.com — domain glossary
 
-The site is a portfolio for Anh Tuan Nguyen, an AI-native developer. Its one job is to get a potential client to send an email.
+The site is a portfolio for Tuan Nguyen, an AI-native developer. Its one job is to get a potential client to send an email.
 
 ## Terms
 
