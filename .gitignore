@@ -2,3 +2,7 @@ node_modules/
 .wrangler/
 .dev.vars
 .env
+
+# Coding agent local state (Claude Code, Codex)
+.claude/
+.codex/
