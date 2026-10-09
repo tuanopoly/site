@@ -4,7 +4,7 @@ Shared project rules live in `AGENTS.md`; this file only imports them.
 
 @AGENTS.md
 
-@CONTEXT.md
+@GLOSSARY.md
 
 ## Claude-only notes
 

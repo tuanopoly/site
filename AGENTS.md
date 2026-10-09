@@ -7,7 +7,7 @@
 - Run: `npm run dev` (wrangler dev)
 - Deploy: `npm run deploy` (wrangler deploy). Ask before deploying.
 - Test/lint: none. Check the page in a browser before calling a change done.
-- Design system: the colours in `public/styles.css` are an AccentPal Palette from accent `#12468f`; same twelve roles, Light and Dark Modes, Geist type as accentpal.tuanopoly.com. Read `CONTEXT.md` for the vocabulary and keep the two sites consistent.
+- Design system: the colours in `public/styles.css` are an AccentPal Palette from accent `#12468f`; same twelve roles, Light and Dark Modes, Geist type as accentpal.tuanopoly.com. Read `GLOSSARY.md` for the vocabulary and keep the two sites consistent.
 
 ## Working agreements
 
