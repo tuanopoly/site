@@ -6,3 +6,6 @@ node_modules/
 # Coding agent local state (Claude Code, Codex)
 .claude/
 .codex/
+
+# Agent output, safe to delete
+scratch/
